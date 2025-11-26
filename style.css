@@ -1,0 +1,122 @@
+/* Reset básico */
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    color: #000000;
+}
+
+/* Encabezado */
+.page-header {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+}
+.page-header h1 { font-size: 2.5em; color: #523627; margin-bottom: 10px; }
+.page-header .subtitle { font-size: 1.2em; color: #240606; }
+
+/* Contenido Principal */
+.main-content { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* Introducción */
+.intro-text {
+    padding: 20px;
+    background-color: #f4d6b2;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+    margin-bottom: 30px;
+}
+.intro-text h2 { color: #2c3e50; font-size: 2em; margin-bottom: 15px; }
+.intro-text p { font-size: 1.1em; line-height: 1.6; margin-bottom: 10px; }
+
+/* Contenedor Timeline */
+#timeline-container {
+    max-width: 100%;
+    height: 650px;
+    margin: 0 auto 40px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    overflow: hidden;
+}
+#timeline-embed { width: 100%; height: 100%; }
+
+/* Estilos TimelineJS */
+.tl-headline { font-weight: 700 !important; color: #ffffff; }
+.tl-text-content p { font-size: 1.1em; line-height: 1.5; }
+.tl-slidenav-icon { color: #fff; font-size: 2em; }
+.tl-timemarker-content-container { background-color: rgba(255, 255, 255, 0.9) !important; border-radius: 4px; }
+
+/* Media Queries (Móvil) */
+@media only screen and (max-width: 768px) {
+    .page-header h1 { font-size: 1.8em; }
+    .page-header .subtitle, .intro-text p { font-size: 1em; }
+    .intro-text h2 { font-size: 1.5em; }
+    #timeline-container { height: 450px; margin-left: 10px; margin-right: 10px; }
+}
+@media only screen and (max-width: 480px) {
+    .page-header h1 { font-size: 1.5em; }
+    #timeline-container { height: 350px; }
+}
+
+/* ==========================================================================
+   CONTROL DE TAMAÑO INTELIGENTE (DEFINITIVO)
+   ========================================================================== */
+
+/* 1. CONFIGURACIÓN DEL CONTENEDOR */
+.tl-media-content {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 100% !important;
+}
+
+/* 2. REGLA PARA ICONOS PEQUEÑOS (Por defecto) */
+.tl-media-content-container img {
+    max-height: 200px !important;  
+    max-width: 200px !important;   
+    width: auto !important;        
+    height: auto !important;       
+    object-fit: contain !important; 
+    box-shadow: none !important;    
+    background: transparent !important;
+    border: none !important;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+/* 3. EXCEPCIÓN PARA IMÁGENES GRANDES (Clase media-grande) */
+.tl-slide.media-grande .tl-media-content-container img {
+    max-height: 550px !important; 
+    max-width: 100% !important;   
+    width: auto !important;
+}
+
+/* 4. REGLA PARA VIDEOS (YOUTUBE) - Siempre grandes */
+.tl-media-content-container iframe,
+.tl-media-content-container .tl-media-youtube {
+    max-height: none !important;
+    max-width: none !important;
+    width: 100% !important;
+    height: 400px !important;
+    border: none !important;
+}
+
+/* 5. AJUSTES MÓVIL */
+@media only screen and (max-width: 600px) {
+    .tl-media-content-container img {
+        max-height: 150px !important;
+        max-width: 150px !important;
+    }
+    .tl-slide.media-grande .tl-media-content-container img {
+        max-height: 250px !important;
+    }
+    .tl-media-content-container iframe {
+        height: 250px !important;
+    }
+}
